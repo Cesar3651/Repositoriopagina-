@@ -1,0 +1,168 @@
+@import url('');
+
+* { margin:0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:rgba(0, 0, 0, 0.705);
+
+}
+.producto {
+    width: 300px;
+    height: 300px;
+}
+.contenedor {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    flex-wrap: wrap;
+    width: 600px;
+    transform-style: preserve-3d;
+}
+.contenedor .box {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    margin: 40px;
+    background-color:rgba(0, 0, 0, 0.233);
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+.contenedor .box::before { 
+    content: 'NIKE';
+    position: absolute;
+    text-align: center;
+    top:20px;
+    left: 100px;
+    font-size: 5em;
+    font-weight:900 ;
+    color:white;
+    font-style: italic;
+    opacity: 0;
+    
+}  
+.contenedor .box::after { 
+    content: 'UBICACION D4';
+    position: absolute;
+    bottom:60px;
+    left: 25%;
+    font-size: 2em;
+    font-weight:900 ;
+    color:white;
+    font-style: italic;
+    opacity: 0; 
+    transition: 5s;
+    ;
+}   
+.contenedor .box:hover::before,
+.contenedor .box::after
+{
+    opacity: 0.4;
+}
+
+.contenedor .box .nombre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: white;
+    width: 100%;
+    transform-style: preserve-3d;
+    transform: translate3d(0,0,75px);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+.contenedor .box .comprar
+{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate3d(-50%,0,75%);
+    color: rgba(255, 255, 255, 0.877);
+    background: black;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 10;
+}
+.contenedor .box:hover .comprar
+{
+    bottom: 30px;
+    opacity: 1 ;
+}
+.contenedor .box .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: 0.5s;
+    background: #ffffff;
+    transform-style: preserve-3d;
+    z-index: 10;
+    transform: translate3d(-50%,-50%,50px);
+    
+}
+.contenedor .box:hover .circle 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: 0.5s;
+    background: #ffffff;
+    transform-style: preserve-3d;
+    z-index: 10;
+    transform: translate3d(-50%,-50%,50px);
+}
+.contenedor .box .producto
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-radius: 50%;
+    transition: 0.5s;
+    z-index: 11;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+    
+    transform: translate3d(-50%,-50%,50px) rotate(20deg);
+    
+
+}
+.contenedor .box:nth-child(1) .circle,
+.contenedor .box:nth-child(1) .comprar
+
+{
+    background: rgba(255, 255, 255, 0.712);
+}
+.contenedor .box:nth-child(2) .circle,
+.contenedor .box:nth-child(2) .comprar
+{
+background: greenyellow;
+}
+.contenedor .box:nth-child(3) .circle,
+.contenedor .box:nth-child(3) .comprar
+{
+background: rgb(15, 101, 214);
+}
+.contenedor .box:nth-child(4) .circle,
+.contenedor .box:nth-child(4) .comprar
+{
+background: rgb(161, 9, 9);
+}
